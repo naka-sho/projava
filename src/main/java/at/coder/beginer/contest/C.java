@@ -53,7 +53,7 @@ public class C {
     }
 
     private static List<List<Integer>> traverse(List<List<Integer>> map, int curX, int curY, int move){
-        ArrayDeque<Position> stack = new ArrayDeque();
+        Deque<Position> stack = new ArrayDeque();
         stack.push(new Position(curX,curY));
         Position position ;
         while ((position = stack.pollLast()) != null) {
@@ -93,22 +93,22 @@ public class C {
         return integer.intValue() + 1;
     }
 
-    private static ArrayDeque<Position> stackRight(ArrayDeque<Position> stack, int curX, int curY) {
+    private static Deque<Position> stackRight(Deque<Position> stack, int curX, int curY) {
         stack.push(new Position(curX - 1, curY));
         return stack;
     }
 
-    private static ArrayDeque<Position> stackLeft(ArrayDeque<Position> stack, int curX, int curY) {
+    private static Deque<Position> stackLeft(Deque<Position> stack, int curX, int curY) {
         stack.push(new Position(curX + 1, curY));
         return stack;
     }
 
-    private static ArrayDeque<Position> stackUp(ArrayDeque<Position> stack, int curX, int curY) {
+    private static Deque<Position> stackUp(Deque<Position> stack, int curX, int curY) {
         stack.push(new Position(curX, curY + 1));
         return stack;
     }
 
-    private static ArrayDeque<Position> stackDown(ArrayDeque<Position> stack, int curX, int curY) {
+    private static Deque<Position> stackDown(Deque<Position> stack, int curX, int curY) {
         stack.push(new Position(curX, curY - 1));
         return stack;
     }
